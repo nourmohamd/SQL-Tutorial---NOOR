@@ -1,0 +1,37 @@
+<<<Lesson 1>>>
+Note: كل قواعد الأس كيو أل تكتب أحرف كبيرة
+1 - CREATE DATABASE name_of_database ===> Create DataBase
+2 - DROP DATABASE name_of_database ===> Drop DataBase
+3 - CREATE TABLE name_of_table (column1 typeit, column2 typeit, ...) ===> Create Table With Columns
+Type Of Values You Storage It In Column:
+INT(11) ===> Integer
+VARCHAR(255) ===> String
+LONGTEXT(1023) ===> Long String
+TINYINT(1) ===> Boolean
+TIMESTAMP ===> Time
+DATE ===> Date
+DATETIME ===> Data+Time
+YEAR(4) ===> Year
+CHAR(1) ===> One Character
+BLOB ===> File 64(KB)
+MEDIUMBLOB ===> File 16(MB)
+LONGBLOB ===> File 40(MB)
+JSON ===> Data Json
+
+<<<Lesson 2>>>
+1 - ALTER TABLE name_of_table ADD name_column type_column ===> Add New Column To Table
+2 - ALTER TABLE name_of_table ADD (name_column1 type_column1, name_column2 type_column2, ... ...) ===> Add Many Columns To Table
+3 - ALTER TABLE name_of_table DROP name_of_column ===> Delete Column In Table
+4 - DROP TABLE name_of_table ===> For Delete Table In DataBase
+
+
+
+
+
+
+
+
+
+
+
+
