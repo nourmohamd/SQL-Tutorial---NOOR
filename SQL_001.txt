@@ -6,7 +6,7 @@ Note: كل قواعد الأس كيو أل تكتب أحرف كبيرة
 Type Of Values You Storage It In Column:
 INT(11) ===> Integer
 VARCHAR(255) ===> String
-LONGTEXT(1023) ===> Long String
+LONGTEXT ===> Long String Containts (1023) Characters
 TINYINT(1) ===> Boolean
 TIMESTAMP ===> Time
 DATE ===> Date
@@ -24,14 +24,47 @@ JSON ===> Data Json
 3 - ALTER TABLE name_of_table DROP name_of_column ===> Delete Column In Table
 4 - DROP TABLE name_of_table ===> For Delete Table In DataBase
 
+<<<Lesson 3>>>
+1 - INSERT INTO name_of_table (column1, column2, ...) VALUES (value1, value2, ...) ===> Add Data To Table
+2 - SELECT * FROM name_of_table ===> Show All Data From Table
+3 - SELECT column1, column2, ... FROM name_of_table ===> Show Data From Table
+4 - SELECT * FROM name_of_table WHERE field1 = value, ... ===> Show Data By Condition
+Conditions is:
+OR AND != <> > < >= <= BETWEEN
+5 - SELECT * FROM name_of_table WHERE id BETWEEN 10 AND 29 ===> Show Data By Between Condition
+6 - DELETE FROM name_of_table WHERE id = 12 OR name_emplyee = "Mohamed Nour" ===> Delete Record From Table By Condition
+7 - DELETE FROM name_of_table ===> Delete All Data
+8 - UPDATE name_of_table SET column1 = newValue, column2 = newValue, ... WHERE any condition ===> Update Record Data In Table
 
-
-
-
-
-
-
-
-
+<<<Lesson 4>>>
+Type Of Constraint:
+1 - Null ===> أي أن هذا الحقل يمكن أن يكون فارغ
+2 - Not Null ===> أي أن هذا الحقل لا يمكن أن يكون فارغ
+Example1:
+-CREATE TABLE A (id INT(11) NOT NULL, name VARCHAR(255) NULL)
+3 - PRIMARY KEY ===> مفتاح رئيسي يكون فريد أي لايمكن تكرار قيمته وليس فارغ
+PRIMARY KEY ===> UNIQUE + NOT NULL
+Example1:
+-CREATE TABLE table (id int(11) NOT NULL, PRIMARY KEY(id)) ===> Table Has Column Primary Key
+-ALTER TABLE name_of_table DROP PRIMARY KEY ===> Remove PRIMARY KEY From Table Has Created
+-ALTER TABLE name_of_table ADD CONSTRAINT name_constraint PRIMARY KEY(column1, column2, ...) ===> Add Primary Key For Table Created
+-ALTER TABLE name_of_table ADD PRIMARY KEY (Column1, Column2, ...) ===> Add Primary Key For Table Created
+4 - FOREIGN KEY ===> مفتاح ثانوي يربط الجداول ببعض ويعزز الوصول للبيانات
+Example1:
+-CREATE TABLE one (
+	id_one int(11),
+	name varchar(255),
+	primary key (id_one)
+)
+-CREATE TABLE two (
+	id_two int(11),
+	id_one int(11),
+	primary key(id_two),
+	foreign key (id_one) refernces one(id_one)
+)
+Example2:
+-ALTER TABLE name_of_table1 ADD CONSTRAINT name_of_constraint FOREIGN KEY (column1) REFERENCES name_of_table2(column1)
+ON DELETE CASCADE ON UPDATE CASCADE ===> For Create Foreign Key On Table Created Before
+-ALTER TABLE name_of_table1 DROP CONSTRAINT name_of_constraint
 
 
