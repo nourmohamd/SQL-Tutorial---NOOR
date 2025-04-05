@@ -60,11 +60,64 @@ Example1:
 	id_two int(11),
 	id_one int(11),
 	primary key(id_two),
-	foreign key (id_one) refernces one(id_one)
+	foreign key (id_one) references one(id_one)
 )
 Example2:
 -ALTER TABLE name_of_table1 ADD CONSTRAINT name_of_constraint FOREIGN KEY (column1) REFERENCES name_of_table2(column1)
 ON DELETE CASCADE ON UPDATE CASCADE ===> For Create Foreign Key On Table Created Before
 -ALTER TABLE name_of_table1 DROP CONSTRAINT name_of_constraint
 
+<<<Lesson 5>>>
+1 - INNER JOIN ===> For Extract Data From Two Or Three Or ... Tables <([ Foreign Key - Primary Key ])>
+Example1:
+-SELECT * FROM t1 INNER JOIN t2 ON t1.id_t2 = t2.id_t2
+-SELECT * FROM t1 INNER JOIN t2 ON ForeignKey = PrimaryKey
+-SELECT * FROM t1 INNER JOIN t2 ON t1.id_t2 = t2.id_t2 WHERE t1.id = 10
+-SELECT emplyee.name_emplyee, job.name_job FROM emplyee 
+INNER JOIN job ON emplyee.id_two = job.id_job 
+WHERE emplyee.name_emplyee = "Mohamed Nour Abdo"
+2 - ORDER BY ===> For Order The Results By Ascending OR Descending
+Note (important): Always Write 
+- SELECT
+- FROM
+- WHERE
+- GROUP BY
+- ORDER BY name_of_field
+- LIMIT + OFFSET
+Example:
+-SELECT * FROM T1 ORDER BY T1.name_emplyee
+3 - AS ===> For Change Name Of Column In Table During Browser Data
+Example:
+-SELECT id_emplyee AS Number_Of_Emplyee FROM emplyee
+4 - GROUP BY ===> It is Functions You Use It When Show Data
+--- COUNT(x) ===> عدد الأسطر
+--- SUM(x)   ===> جمع القيم
+--- AVG(x)   ===> معدل جمع القيم
+--- MAX(x)   ===> يعطيك أكبر قيمة
+--- MIN(x)   ===> يعطيك أصغر قيمة
+Example:
+-SELECT MIN(price) FROM products
+-SELECT COUNT(price) FROM products WHERE name_products = "apple"
+-SELECT COUNT(price) FROM products GROUP BY name_products
+5 - LIKE "%" ===> For Get Data By Near Letter Or Word
+Forms:
+LIKE "a%" ===> Start With a
+LIKE "%a" ===> End With a
+LIKE "%a%" ===> Contain With a
+LIKE "_a%" ===> Second Letter is a
+LIKE "a_%" ===> First Letter is a And Length Of Word Two Letter A little
+LIKE "a__%" ===> First Letter is a And Length Of Word is Three Or More
+LIKE "a%0" ===> Start With a And End With 0
+Example:
+-SELECT * FROM emplyee WHERE name_emplyee LIKE "M%d" ===> Mohamed
 
+<<<Lesson 6>>>
+1 - LIMIT Number ===> لتحديد عدد الأسطر المراد اخراجها
+2 - OFFSET Number ===> طباعة الأسطر ابتداء من السطر الكذا
+Example:
+-SELECT * FROM t1 LIMIT 10 OFFSET 5
+-SELECT * FROM t1 ORDER BY id_emplyee DESC LIMIT 10 OFFSET 5
+-SELECT * FROM t1 ORDER BY id_emplyee DESC LIMIT 10, 5 ===> For Merge Limit With Offset In One Statement
+3 - DISTINCT name_field ===> إخراج بيانات غير متكررة تستخدم مع عمود واحد لمرة واحدة
+Example:
+-SELECT DISTINCT name_product FROM products
