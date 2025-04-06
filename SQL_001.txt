@@ -121,3 +121,48 @@ Example:
 3 - DISTINCT name_field ===> إخراج بيانات غير متكررة تستخدم مع عمود واحد لمرة واحدة
 Example:
 -SELECT DISTINCT name_product FROM products
+
+<<<Lesson 7>>>
+1 - GROUP BY ===> For Order Or Group Results By One Column
+NOTE: Use Sum Functions With GROUP BY
+Usages:
+---1 - For Order Results
+-SELECT * FROM job GROUP BY name_job DESC|ASC ===> For Order Results
+-SELECT * FROM job GROUP BY name_job ORDER BY price DESC
+---2 - For Group Results
+Example:
+-SELECT COUNT(id) FROM emplyee GROUP BY name_emplyee
+-SELECT COUNT(emplyee.id_emplyee), job.name_job, job.id_job AS Number_Job
+ FROM emplyee 
+ RIGHT JOIN job ON emplyee.id_two = job.id_job
+ GROUP BY job.id_job
+-SELECT COUNT(id), name from emplyee GROUP BY name
+2 - Time ===> All You Need To Know In Time & Date
+-SELECT CURRENT_DATE() Or SELECT CURRENT_DATE ===> For Get Date
+-SELECT CURRENT_TIME() Or SELECT CURRENT_TIME ===> For Get Time
+-SELECT CURRENT_TIMESTAMP() Or SELECT CURRENT_TIMESTAMP Or SELECT NOW() ===> For Get Full TimeZone
+3 - Control With Time And Date For Show Data Use This INTERVAL
+Example:
+-SELECT * FROM t1 WHERE date >= CURRENT_DATE - INTERVAL 1 MONTH - INTERVAL 10 DAY
+ ===> For Get Data Last 40 DAYS
+-SELECT * FROM t1 WHERE time >= NOW() - INTERVAL 90 MINUTE AND date = CURRENT_DATE()
+ ===> Get Data From 1:30 Hours
+4 - JOIN ===> Technique For Get Data From Tables RelationShip With Them
+ ===> JOIN === INNER JOIN
+Example:
+-SELECT user.name, posts.content, comment.content
+ FROM comment JOIN user ON comment.user_id = user.id
+ JOIN posts ON comment.post_id = post.id
+ ===> For Get Data From Three Or More Table RelationShip With Them
+5 - LEFT OUTER JOIN | LEFT JOIN , RIGHT OUTER JOIN | RIGHT JOIN , FULL OUTER JOIN
+Example:
+-SELECT * FROM users LEFT OUTER JOIN posts ON users.id = posts.id_user
+-SELECT * FROM users RIGHT OUTER JOIN posts ON users.id = posts.id_user
+-SELECT * FROM users FULL OUTER JOIN posts ON users.id = posts.id_user
+6 - Comments in SQL-MySQL ===> For Comment
+---1
+--sapce....
+---2
+/* 
+	Multine Comments
+*/
