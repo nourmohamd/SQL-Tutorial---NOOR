@@ -166,3 +166,27 @@ Example:
 /* 
 	Multine Comments
 */
+
+<<<Lesson 8>>>
+1 - IN (Value1, Value2, ....)
+Example:
+-SELECT * FROM t1 WHERE column1 IN (1, 2, 3, 4) ===> For Get Data By Values In ()
+-SELECT * FROM t1 WHERE column1 NOT IN (1, 2, 3, 4) ===> For Get Data That Not Equals Values In ()
+2 - Arithmetic Operators ===> * / + - %
+Example:
+-SELECT salary/30 AS Day_Salary FROM emplyee
+3 - FORMAT(VALUE, Number Of Numbers After point 3.123123)
+Example:
+-SELECT FORMAT(salary/30, 2) AS Day_Salary FROM emplyee
+4 - Methods For Data And Time
+---1 - DAY("2025-01-12") ===> 12
+---2 - MONTH("2025-01-12") ===> 01
+---3 - YEAR("2025-01-12") ===> 2025
+---4 - HOUR("10:03:31") ===> 10
+---5 - MINUTE("10:03:31") ===> 03
+---6 - SECOND("10:03:31") ===> 31
+5 - دمج جدولين مع بعض في جدول واحد
+Example:
+-INSERT INTO t1 SELECT * FROM t2 ===> Merge (t2) in (t1)
+Note: إذا وجد تكرار يجب حذفها أو حذف المفتاح الرئيسي برايمري كي
+Note: يجب أن يمتلكا الجدولان نفس البنية الهيكلية للأعمدة والمفاتيح
