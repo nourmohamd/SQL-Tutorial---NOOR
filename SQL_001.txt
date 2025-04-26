@@ -190,3 +190,7 @@ Example:
 -INSERT INTO t1 SELECT * FROM t2 ===> Merge (t2) in (t1)
 Note: إذا وجد تكرار يجب حذفها أو حذف المفتاح الرئيسي برايمري كي
 Note: يجب أن يمتلكا الجدولان نفس البنية الهيكلية للأعمدة والمفاتيح
+
+<<<Lesson 9>>>
+For Add Attibute AUTO_INCREMENT For Any Field In Any Table Write As:
+CREATE TABLE `name` (id_name int(11) PRIMARY KEY AUTO_INCREMENT) ===> Only
