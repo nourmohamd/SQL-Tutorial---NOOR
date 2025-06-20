@@ -194,3 +194,11 @@ Note: يجب أن يمتلكا الجدولان نفس البنية الهيكل
 <<<Lesson 9>>>
 For Add Attibute AUTO_INCREMENT For Any Field In Any Table Write As:
 CREATE TABLE `name` (id_name int(11) PRIMARY KEY AUTO_INCREMENT) ===> Only
+
+<<Lesson 10>>
+For Get A Random Record In SQL-MYSQL ===> Write This RAND()
+Example:
+========
+SELECT * FROM `your_table`
+ORDER BY RAND()
+LIMIT 1;
