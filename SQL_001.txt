@@ -202,3 +202,12 @@ Example:
 SELECT * FROM `your_table`
 ORDER BY RAND()
 LIMIT 1;
+
+<<<Lesson 11>>>
+When You Want To Write Some Conditions in SQL Query You Cannot Use String in Query Direct
+The Solution To Solve That is:
+$username="root";
+$password="";
+$db=new PDO("mysql:host=localhost;dbname=erd_smart_shop;charset=utf8;", $username, $password);
+$sql = $db->prepare("SELECT * FROM `product` WHERE `category` = ? LIMIT 5");
+$sql-execute(["Laptop"]);
